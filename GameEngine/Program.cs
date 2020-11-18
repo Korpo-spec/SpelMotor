@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Internal;
+using System;
 
 namespace GameEngine
 {
@@ -6,7 +7,11 @@ namespace GameEngine
     {
         static void Main(string[] args)
         {
+            
             Console.WriteLine("Hello World!");
+
+            Console.ReadLine();
+
         }
     }
 }
