@@ -10,7 +10,7 @@ namespace GameEngine
         
         public override Draw(){
 
-
+            Console.WriteLine("orgiuheorig");
 
         }
 
