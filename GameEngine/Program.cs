@@ -14,11 +14,13 @@ namespace GameEngine
 
             Vector2 position = new Vector2(1,2);
             Console.WriteLine("Hello World!" + position.Y);
-            Console.ReadLine();
+            
+            Character Hero = new Character();
+            Console.WriteLine( GameObject.gameObjects.Count);
 
             while (!Raylib.WindowShouldClose())
             {
-                Character Hero = new Character();
+                
                 
                 GameObject.UpdateAll();
 
