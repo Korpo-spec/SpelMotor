@@ -27,7 +27,7 @@ namespace GameEngine
 
         }
 
-        static void UpdateAll()
+        public static void UpdateAll()
         {
             foreach (GameObject u in gameObjects)
             {
@@ -35,7 +35,7 @@ namespace GameEngine
             }
         }
 
-        static void DrawAll()
+        public static void DrawAll()
         {
             foreach (GameObject d in gameObjects)
             {
