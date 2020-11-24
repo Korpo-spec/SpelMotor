@@ -1,6 +1,5 @@
 using System.Numerics;
 using System;
-using System.Numerics;
 using System.Collections.Generic;
 
 namespace GameEngine
@@ -13,10 +12,14 @@ namespace GameEngine
 
         public static List<GameObject> gameObjects = new List<GameObject>();
 
+        public GameObject()
+        {
+            gameObjects.Add(this);
+        }
+
         public void Update()
         {
-
-
+            
         }
 
         public void Draw()
@@ -26,12 +29,19 @@ namespace GameEngine
 
         static void UpdateAll()
         {
-
+            foreach (GameObject u in gameObjects)
+            {
+                u.Update();
+            }
+            
         }
 
         static void DrawAll()
         {
-            
+            foreach (GameObject d in gameObjects)
+            {
+                d.Draw();
+            }
         }
     }
 
