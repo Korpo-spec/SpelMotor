@@ -18,6 +18,12 @@ namespace GameEngine
 
             while (!Raylib.WindowShouldClose())
             {
+                Character Hero = new Character();
+                
+                GameObject.UpdateAll();
+
+                GameObject.DrawAll();
+                
                 
             }
            
