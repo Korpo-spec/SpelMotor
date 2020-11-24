@@ -7,7 +7,7 @@
       <Entity type="Class">
         <Name>GameObject</Name>
         <Access>Public</Access>
-        <Location left="293" top="18" />
+        <Location left="282" top="25" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">Vector2 position</Member>
@@ -15,12 +15,15 @@
         <Member type="Field">Animation animations</Member>
         <Member type="Method">public virtual void Update()</Member>
         <Member type="Method">public virtual void Draw()</Member>
+        <Member type="Method">public static void UpdateAll()</Member>
+        <Member type="Method">public static void DrawAll()</Member>
+        <Member type="Method">public static float TimeDeltaTime()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Platform</Name>
         <Access>Public</Access>
-        <Location left="670" top="74" />
+        <Location left="540" top="147" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -28,7 +31,7 @@
       <Entity type="Class">
         <Name>Character</Name>
         <Access>Public</Access>
-        <Location left="293" top="298" />
+        <Location left="282" top="363" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -36,7 +39,7 @@
       <Entity type="Class">
         <Name>Player</Name>
         <Access>Public</Access>
-        <Location left="516" top="540" />
+        <Location left="517" top="524" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">Weapon myWeapon</Member>
@@ -45,7 +48,7 @@
       <Entity type="Class">
         <Name>Enemy</Name>
         <Access>Public</Access>
-        <Location left="59" top="540" />
+        <Location left="65" top="547" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -53,7 +56,7 @@
       <Entity type="Class">
         <Name>Weapon</Name>
         <Access>Public</Access>
-        <Location left="1223" top="341" />
+        <Location left="508" top="1363" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -61,7 +64,7 @@
       <Entity type="Class">
         <Name>Items</Name>
         <Access>Public</Access>
-        <Location left="1057" top="74" />
+        <Location left="303" top="1066" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -69,7 +72,7 @@
       <Entity type="Class">
         <Name>Consumables</Name>
         <Access>Public</Access>
-        <Location left="849" top="341" />
+        <Location left="233" top="1352" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -77,64 +80,73 @@
       <Entity type="Class">
         <Name>Food</Name>
         <Access>Public</Access>
-        <Location left="1036" top="588" />
+        <Location left="369" top="1638" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Scene</Name>
+        <Access>Public</Access>
+        <Location left="954" top="19" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;GameObject&gt; Gameobjects</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Animation</Name>
+        <Access>Public</Access>
+        <Location left="936" top="410" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">Image spritesheet</Member>
+        <Member type="Field">int frameSize</Member>
+        <Member type="Field">Image[] frameSequence</Member>
+        <Member type="Field">Float time</Member>
+        <Member type="Method">private void SplitImg()</Member>
+        <Member type="Method">public void GetCurrentFrame()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
     <Relationships>
       <Relationship type="Association" first="1" second="0">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="2" second="0">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="3" second="2">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="4" second="2">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="5" second="6">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="7" second="6">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="8" second="7">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
