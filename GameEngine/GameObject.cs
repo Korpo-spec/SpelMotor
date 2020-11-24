@@ -12,9 +12,14 @@ namespace GameEngine
 
         public static List<GameObject> gameObjects = new List<GameObject>();
 
-        public virtual void Update()
+        public GameObject()
         {
             gameObjects.Add(this);
+        }
+
+        public virtual void Update()
+        {
+
         }
 
         public virtual void Draw()
@@ -28,7 +33,6 @@ namespace GameEngine
             {
                 u.Update();
             }
-            
         }
 
         static void DrawAll()
