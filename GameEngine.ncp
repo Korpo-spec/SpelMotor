@@ -13,7 +13,7 @@
         <Member type="Field">Vector2 position</Member>
         <Member type="Field">float rotation</Member>
         <Member type="Field">Animation animations</Member>
-        <Member type="Method">public virtual void Update()</Member>
+        <Member type="Method">public void GameObject()</Member>
         <Member type="Method">public virtual void Draw()</Member>
         <Member type="Method">public static void UpdateAll()</Member>
         <Member type="Method">public static void DrawAll()</Member>
@@ -88,7 +88,7 @@
       <Entity type="Class">
         <Name>Scene</Name>
         <Access>Public</Access>
-        <Location left="954" top="19" />
+        <Location left="1015" top="25" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">List&lt;GameObject&gt; Gameobjects</Member>
@@ -97,7 +97,7 @@
       <Entity type="Class">
         <Name>Animation</Name>
         <Access>Public</Access>
-        <Location left="936" top="410" />
+        <Location left="815" top="25" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">Image spritesheet</Member>
