@@ -1,6 +1,5 @@
 using System.Numerics;
 using System;
-using System.Numerics;
 using System.Collections.Generic;
 
 namespace GameEngine
@@ -13,13 +12,13 @@ namespace GameEngine
 
         public static List<GameObject> gameObjects = new List<GameObject>();
 
-        public void Update()
+        public virtual void Update()
         {
 
 
         }
 
-        public void Draw()
+        public virtual void Draw()
         {
 
         }
