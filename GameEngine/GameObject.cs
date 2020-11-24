@@ -1,6 +1,7 @@
 using System.Numerics;
 using System;
 using System.Collections.Generic;
+using Raylib_cs;
 
 namespace GameEngine
 {
@@ -37,10 +38,13 @@ namespace GameEngine
 
         public static void DrawAll()
         {
+            Raylib.BeginDrawing();
+            Raylib.ClearBackground(Color.WHITE);
             foreach (GameObject d in gameObjects)
             {
                 d.Draw();
             }
+            Raylib.EndDrawing();
         }
     }
 
