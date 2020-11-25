@@ -93,7 +93,7 @@
       <Entity type="Class">
         <Name>Food</Name>
         <Access>Public</Access>
-        <Location left="369" top="1638" />
+        <Location left="123" top="1647" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
