@@ -8,14 +8,12 @@
         <Name>GameObject</Name>
         <Access>Public</Access>
         <Location left="282" top="25" />
-        <Size width="162" height="247" />
+        <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">Vector2 position</Member>
         <Member type="Field">float rotation</Member>
-        <Member type="Field">public List gameObjects</Member>
         <Member type="Field">Animation animations</Member>
         <Member type="Method">public void GameObject()</Member>
-        <Member type="Method">public virtual void Update()</Member>
         <Member type="Method">public virtual void Draw()</Member>
         <Member type="Method">public static void UpdateAll()</Member>
         <Member type="Method">public static void DrawAll()</Member>
@@ -33,22 +31,18 @@
       <Entity type="Class">
         <Name>Character</Name>
         <Access>Public</Access>
-        <Location left="282" top="361" />
+        <Location left="282" top="363" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">private int hp</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Player</Name>
         <Access>Public</Access>
-        <Location left="518" top="522" />
+        <Location left="517" top="524" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">Weapon myWeapon</Member>
-        <Member type="Field">Rectangle body</Member>
-        <Member type="Method">public override void Update()</Member>
-        <Member type="Method">public override void Draw()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -62,38 +56,31 @@
       <Entity type="Class">
         <Name>Weapon</Name>
         <Access>Public</Access>
-        <Location left="508" top="1361" />
+        <Location left="487" top="1083" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">public float damage</Member>
-        <Member type="Field">public int range</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>Item</Name>
+        <Name>Items</Name>
         <Access>Public</Access>
-        <Location left="305" top="1065" />
+        <Location left="282" top="786" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">public int price</Member>
-        <Member type="Field">public Image icon</Member>
-        <Member type="Field">public int quantity</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>Consumable</Name>
+        <Name>Consumables</Name>
         <Access>Public</Access>
-        <Location left="235" top="1350" />
+        <Location left="212" top="1072" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">int maxQuantity</Member>
-        <Member type="Field">int newField</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Food</Name>
         <Access>Public</Access>
-        <Location left="369" top="1638" />
+        <Location left="348" top="1358" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -119,6 +106,26 @@
         <Member type="Field">Float time</Member>
         <Member type="Method">private void SplitImg()</Member>
         <Member type="Method">public void GetCurrentFrame()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Inventory</Name>
+        <Access>Public</Access>
+        <Location left="1146" top="631" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">items[] itemsInventory</Member>
+        <Member type="Method">public void Pickup()</Member>
+        <Member type="Method">public override void Draw()</Member>
+        <Member type="Method">public override void Update()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>UI</Name>
+        <Access>Public</Access>
+        <Location left="1126" top="328" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
@@ -175,6 +182,14 @@
         <Label>
         </Label>
         <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="11" second="12">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
