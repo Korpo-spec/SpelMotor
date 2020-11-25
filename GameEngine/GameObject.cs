@@ -7,9 +7,9 @@ namespace GameEngine
 {
     public class GameObject
     {
-        private Vector2 position = new Vector2(0, 0);
+        protected Vector2 position = new Vector2(0, 0);
 
-        private float rotation = 0f;
+        protected float rotation = 0f;
 
         public static List<GameObject> gameObjects = new List<GameObject>();
 
