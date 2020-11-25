@@ -7,7 +7,7 @@ namespace GameEngine
     {
         /*Weapon class goes here*/
 
-        Rectangle body = new Rectangle(10, 10, 50, 50);
+        
 
         public override void Update()
         {
@@ -15,6 +15,10 @@ namespace GameEngine
             {
                 body.x += 1;
             }
+
+            body.y += 1;
+
+            CheckForCollision();
         }
 
         public override void Draw()
