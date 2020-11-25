@@ -7,19 +7,19 @@ namespace GameEngine
     {
         /*Weapon class goes here*/
 
-        Rectangle Body = new Rectangle(10, 10, 50, 50);
+        Rectangle body = new Rectangle(10, 10, 50, 50);
 
         public override void Update()
         {
             if(Raylib.IsKeyDown(KeyboardKey.KEY_D))
             {
-                Body.x += 1;
+                body.x += 1;
             }
         }
 
         public override void Draw()
         {
-            Raylib.DrawRectangleRec(Body, Color.DARKBLUE);
+            Raylib.DrawRectangleRec(body, Color.DARKBLUE);
         }
     }
 }

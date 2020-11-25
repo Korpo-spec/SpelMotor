@@ -8,12 +8,14 @@
         <Name>GameObject</Name>
         <Access>Public</Access>
         <Location left="282" top="25" />
-        <Size width="162" height="216" />
+        <Size width="162" height="247" />
         <Collapsed>False</Collapsed>
         <Member type="Field">Vector2 position</Member>
         <Member type="Field">float rotation</Member>
+        <Member type="Field">public List gameObjects</Member>
         <Member type="Field">Animation animations</Member>
         <Member type="Method">public void GameObject()</Member>
+        <Member type="Method">public virtual void Update()</Member>
         <Member type="Method">public virtual void Draw()</Member>
         <Member type="Method">public static void UpdateAll()</Member>
         <Member type="Method">public static void DrawAll()</Member>
@@ -31,18 +33,22 @@
       <Entity type="Class">
         <Name>Character</Name>
         <Access>Public</Access>
-        <Location left="282" top="363" />
+        <Location left="282" top="361" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
+        <Member type="Field">private int hp</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Player</Name>
         <Access>Public</Access>
-        <Location left="517" top="524" />
+        <Location left="518" top="522" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">Weapon myWeapon</Member>
+        <Member type="Field">Rectangle body</Member>
+        <Member type="Method">public override void Update()</Member>
+        <Member type="Method">public override void Draw()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -56,25 +62,32 @@
       <Entity type="Class">
         <Name>Weapon</Name>
         <Access>Public</Access>
-        <Location left="508" top="1363" />
+        <Location left="508" top="1361" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
+        <Member type="Field">public float damage</Member>
+        <Member type="Field">public int range</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>Items</Name>
+        <Name>Item</Name>
         <Access>Public</Access>
-        <Location left="303" top="1066" />
+        <Location left="305" top="1065" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
+        <Member type="Field">public int price</Member>
+        <Member type="Field">public Image icon</Member>
+        <Member type="Field">public int quantity</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>Consumables</Name>
+        <Name>Consumable</Name>
         <Access>Public</Access>
-        <Location left="233" top="1352" />
+        <Location left="235" top="1350" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
+        <Member type="Field">int maxQuantity</Member>
+        <Member type="Field">int newField</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -111,42 +124,56 @@
     </Entities>
     <Relationships>
       <Relationship type="Association" first="1" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="2" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="3" second="2">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="4" second="2">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="5" second="6">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="7" second="6">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="8" second="7">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
