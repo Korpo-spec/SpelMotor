@@ -16,6 +16,7 @@ namespace GameEngine
         public GameObject()
         {
             gameObjects.Add(this);
+            Console.WriteLine(this);
         }
 
         public virtual void Update()
@@ -40,6 +41,7 @@ namespace GameEngine
         {
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Color.WHITE);
+            
             foreach (GameObject d in gameObjects)
             {
                 d.Draw();
