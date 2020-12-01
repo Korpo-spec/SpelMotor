@@ -20,6 +20,8 @@ namespace GameEngine
             new Plattform(0, 600, 700, 100);
             
 
+            
+
             while (!Raylib.WindowShouldClose())
             {
                 
