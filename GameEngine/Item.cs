@@ -17,12 +17,10 @@ namespace GameEngine
 
         public List<Item> items = new List<Item>();
 
-        static XmlSerializer itemSerializer;
+        static XmlSerializer itemSerializer = new XmlSerializer (typeof (List<Item>));
 
         public void Serialize()
         {
-            itemSerializer = new XmlSerializer (typeof (List<Item>));
-
             FileStream file = File.Open(@"items.xml", FileMode.OpenOrCreate);
 
             itemSerializer.Serialize(file, items);
@@ -41,6 +39,7 @@ namespace GameEngine
         public Item()
         {
             items.Add(this);
+            System.Console.WriteLine(items.Count);
         }
     }
 
