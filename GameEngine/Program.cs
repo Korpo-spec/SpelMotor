@@ -19,6 +19,8 @@ namespace GameEngine
             Console.WriteLine( GameObject.gameObjects.Count);
             Plattform plattform = new Plattform(0, 400, 700, 100);
 
+            
+
             while (!Raylib.WindowShouldClose())
             {
                 
