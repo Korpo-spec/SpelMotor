@@ -15,9 +15,9 @@ namespace GameEngine
             Vector2 position = new Vector2(1,2);
             Console.WriteLine("Hello World!" + position.Y);
             
-            Character Hero = new Character();
+            new Player();
             Console.WriteLine( GameObject.gameObjects.Count);
-            Plattform plattform = new Plattform(0, 400, 700, 100);
+            new Plattform(0, 400, 700, 100);
 
             
 
