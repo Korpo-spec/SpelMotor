@@ -17,7 +17,8 @@ namespace GameEngine
             
             new Player();
             Console.WriteLine( GameObject.gameObjects.Count);
-            new Plattform(0, 400, 700, 100);
+            new Plattform(0, 600, 700, 100);
+            
 
             while (!Raylib.WindowShouldClose())
             {
