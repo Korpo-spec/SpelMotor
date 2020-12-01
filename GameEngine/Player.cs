@@ -16,14 +16,17 @@ namespace GameEngine
                 body.x += 1;
             }
 
-            body.y += 1;
+            //body.y += 1;
 
             CheckForCollision();
         }
 
         public override void Draw()
         {
+            Raylib.BeginDrawing();
             Raylib.DrawRectangleRec(body, Color.DARKBLUE);
+            Console.WriteLine("Skrivs");
+            Raylib.EndDrawing();
         }
     }
 }
