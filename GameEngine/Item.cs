@@ -9,6 +9,8 @@ namespace GameEngine
 {
     public class Item
     {
+        public string name; 
+
         public int price;
 
         public int quantity;
@@ -17,12 +19,10 @@ namespace GameEngine
 
         public List<Item> items = new List<Item>();
 
-        static XmlSerializer itemSerializer;
+        static XmlSerializer itemSerializer = new XmlSerializer (typeof (List<Item>));
 
         public void Serialize()
         {
-            itemSerializer = new XmlSerializer (typeof (List<Item>));
-
             FileStream file = File.Open(@"items.xml", FileMode.OpenOrCreate);
 
             itemSerializer.Serialize(file, items);
@@ -41,6 +41,17 @@ namespace GameEngine
         public Item()
         {
             items.Add(this);
+            System.Console.WriteLine(items.Count);
+        }
+
+        /*public string GetInfo()
+        {
+            return;
+        }*/
+
+        public void Use()//Tar emot en instans av character, ex. HP. Kan användas för att öka HP.
+        {
+
         }
         
     }
