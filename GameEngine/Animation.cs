@@ -1,3 +1,4 @@
+using System.Numerics;
 using System;
 using Raylib_cs;
 
@@ -5,22 +6,14 @@ namespace GameEngine
 {
     public class Animation
     {
-        private Image spritesheet;
+        private Texture2D spriteSheet;
+        private Vector2 frame;
+        private Rectangle frameSize;
+        private int timing; 
 
-        private int frameSize;
-
-        private Image[] frameSequence;
-
-        private float time;
-
-        private void SplitImg()
+        void DrawTextureRec(Texture2D spriteSheet, Rectangle sourceRec, int timer, Vector2 position)
         {
 
-        }
-
-        public void GetCurrentFrame()
-        {
-            
         }
     }
 }
