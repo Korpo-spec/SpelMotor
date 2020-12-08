@@ -9,8 +9,6 @@ namespace GameEngine
 {
     public class Item
     {
-        public string name; 
-
         public int price;
 
         public int quantity;
@@ -43,17 +41,6 @@ namespace GameEngine
             items.Add(this);
             System.Console.WriteLine(items.Count);
         }
-
-        /*public string GetInfo()
-        {
-            return;
-        }*/
-
-        public void Use()//Tar emot en instans av character, ex. HP. Kan användas för att öka HP.
-        {
-
-        }
-        
     }
 
     
