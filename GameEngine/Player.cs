@@ -30,6 +30,7 @@ namespace GameEngine
                 velocity.Y = -jumpForce;
             }
 
+            body.x = position.X;
             body.y += velocity.Y * deltaTime;
             
             CheckForCollision();
