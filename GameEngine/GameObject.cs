@@ -7,7 +7,7 @@ namespace GameEngine
 {
     public class GameObject
     {
-        private Vector2 position = new Vector2(0, 0);
+        protected Vector2 position = new Vector2(0, 0);
 
         private float rotation = 0f;
 
@@ -40,12 +40,14 @@ namespace GameEngine
         public static void DrawAll()
         {
             Raylib.BeginDrawing();
+            Raylib.BeginMode2D(Level.camera);
             Raylib.ClearBackground(Color.WHITE);
             
             foreach (GameObject d in gameObjects)
             {
                 d.Draw();
             }
+            Raylib.EndMode2D();
             Raylib.EndDrawing();
         }
     }

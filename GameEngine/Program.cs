@@ -17,8 +17,11 @@ namespace GameEngine
             
             new Player();
             Console.WriteLine( GameObject.gameObjects.Count);
-            new Plattform(0, 400, 700, 100);
-
+            new Plattform(0, 600, 1500, 100);
+            
+            Level.camera.zoom = 1f;
+            Level.camera.target = new Vector2(0,0);
+            Level.camera.offset = new Vector2(500, 400);
             
 
             while (!Raylib.WindowShouldClose())

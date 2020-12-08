@@ -1,5 +1,7 @@
 using System;
 using Raylib_cs;
+using System.Numerics;
+
 
 namespace GameEngine
 {
@@ -7,23 +9,40 @@ namespace GameEngine
     {
         /*Weapon class goes here*/
 
-        
+        private float jumpForce =200;
 
         public override void Update()
         {
+            float deltaTime = Raylib.GetFrameTime();
+            velocity.Y += gravity * 10 * deltaTime;
             if(Raylib.IsKeyDown(KeyboardKey.KEY_D))
             {
-                body.x += 1;
+                body.x += 4;
+                position.X += 4;
+            }
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_A))
+            {
+                body.x -= 4;
+                position.X -= 4;
+            }
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_SPACE))
+            {
+                velocity.Y = -jumpForce;
             }
 
-            body.y += 1;
-
+            body.y += velocity.Y * deltaTime;
+            
             CheckForCollision();
+
+            position.Y = body.y;
+            Level.camera.target = position + new Vector2(25, 25);
         }
 
         public override void Draw()
         {
+            
             Raylib.DrawRectangleRec(body, Color.DARKBLUE);
+            
         }
     }
 }
