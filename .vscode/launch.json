@@ -10,11 +10,11 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/GameEngine/bin/Debug/netcoreapp3.1/GameEngine.dll",
+            "program": "${workspaceFolder}/SpelMotor/GameEngine/bin/Debug/netcoreapp3.1/GameEngine.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/GameEngine",
+            "cwd": "${workspaceFolder}/SpelMotor/GameEngine",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
-            "console": "externalTerminal",
+            "console": "internalConsole",
             "stopAtEntry": false
         },
         {
