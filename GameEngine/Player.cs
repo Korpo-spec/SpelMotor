@@ -17,19 +17,20 @@ namespace GameEngine
             velocity.Y += gravity * 10 * deltaTime;
             if(Raylib.IsKeyDown(KeyboardKey.KEY_D))
             {
-                body.x += 4;
                 position.X += 4;
+                
             }
             if(Raylib.IsKeyDown(KeyboardKey.KEY_A))
             {
-                body.x -= 4;
                 position.X -= 4;
+                
             }
             if(Raylib.IsKeyDown(KeyboardKey.KEY_SPACE))
             {
                 velocity.Y = -jumpForce;
             }
 
+            body.x = position.X;
             body.y += velocity.Y * deltaTime;
             
             CheckForCollision();
