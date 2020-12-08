@@ -2,6 +2,10 @@
 using System.Numerics;
 using System;
 using Raylib_cs;
+using System.IO;
+using System.Xml;
+using System.Xml.Serialization;
+
 
 namespace GameEngine
 {
@@ -22,6 +26,10 @@ namespace GameEngine
             Level.camera.zoom = 1f;
             Level.camera.target = new Vector2(0,0);
             Level.camera.offset = new Vector2(500, 400);
+
+            Level testLevel = new Level("testLevel");
+
+            
             
 
             while (!Raylib.WindowShouldClose())
@@ -38,7 +46,17 @@ namespace GameEngine
                 
             }
            
+            testLevel.SaveLevel();
+
+            XmlSerializer levelSerializer = new XmlSerializer (typeof(Level));
             
+            FileStream file = File.Open(@"testLevel.xml", FileMode.OpenOrCreate);
+
+            levelSerializer.Serialize(file, testLevel);
+
+            file.Close();
+
+            Console.ReadLine();
 
         }
     }
