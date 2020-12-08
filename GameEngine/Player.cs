@@ -1,5 +1,7 @@
 using System;
 using Raylib_cs;
+using System.Numerics;
+
 
 namespace GameEngine
 {
@@ -15,7 +17,13 @@ namespace GameEngine
             velocity.Y += gravity * 10 * deltaTime;
             if(Raylib.IsKeyDown(KeyboardKey.KEY_D))
             {
-                body.x += 1;
+                body.x += 2;
+                position.X += 4;
+            }
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_A))
+            {
+                body.x -= 2;
+                position.X -= 4;
             }
             if(Raylib.IsKeyDown(KeyboardKey.KEY_SPACE))
             {
@@ -23,13 +31,18 @@ namespace GameEngine
             }
 
             body.y += velocity.Y * deltaTime;
-
+            
             CheckForCollision();
+
+            position.Y = body.y;
+            Level.camera.target = position + new Vector2(25, 25);
         }
 
         public override void Draw()
         {
+            
             Raylib.DrawRectangleRec(body, Color.DARKBLUE);
+            
         }
     }
 }
