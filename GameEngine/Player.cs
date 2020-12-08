@@ -17,12 +17,12 @@ namespace GameEngine
             velocity.Y += gravity * 10 * deltaTime;
             if(Raylib.IsKeyDown(KeyboardKey.KEY_D))
             {
-                body.x += 2;
+                body.x += 4;
                 position.X += 4;
             }
             if(Raylib.IsKeyDown(KeyboardKey.KEY_A))
             {
-                body.x -= 2;
+                body.x -= 4;
                 position.X -= 4;
             }
             if(Raylib.IsKeyDown(KeyboardKey.KEY_SPACE))
