@@ -11,9 +11,9 @@ namespace GameEngine
         private Rectangle frameSize;
         private int timing; 
 
-        void DrawTextureRec(Texture2D spriteSheet, Rectangle sourceRec, int timer, Vector2 position)
+        void DrawAnimation(Texture2D spriteSheet, Rectangle frameSize, int timer, Vector2 position)
         {
-
+            Raylib.DrawTextureEx (spriteSheet, position, 0, 0.5f, Color.BLANK);
         }
     }
 }
