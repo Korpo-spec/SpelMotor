@@ -23,6 +23,7 @@ namespace GameEngine
                 if (Raylib.CheckCollisionRecs(item.hitbox, body))
                 {
                     body.y = item.hitbox.y - body.height;
+                    velocity.Y = 0;
                 }
             }
 
