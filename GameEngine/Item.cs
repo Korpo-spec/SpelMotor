@@ -49,11 +49,11 @@ namespace GameEngine
             return;
         }*/
 
-        public void Use(Character target) //Jag börjar med en klassisk HP-potion
+        public void Use(Character target) //Jag börjar med en klassisk HP-potion, som egentligen sen ska flyttas bort från item-klassen till en subklass. 
         {
-            Player p1 = new Player();
+            Character p1 = new Character();
 
-            p1.
+            //p1.hp += 5;
         }
 
     }
