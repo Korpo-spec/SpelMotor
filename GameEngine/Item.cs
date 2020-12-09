@@ -9,6 +9,8 @@ namespace GameEngine
 {
     public class Item
     {
+        public string name; //Den här ska nog inte vara public?
+
         public int price;
 
         public int quantity;
@@ -41,7 +43,18 @@ namespace GameEngine
             items.Add(this);
             System.Console.WriteLine(items.Count);
         }
-    }
 
-    
+        /*public string GetInfo()
+        {
+            return;
+        }*/
+
+        public void Use(Character target) //Jag börjar med en klassisk HP-potion
+        {
+            Player p1 = new Player();
+
+            p1.
+        }
+
+    }
 }
