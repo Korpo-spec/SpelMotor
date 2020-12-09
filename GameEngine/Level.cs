@@ -13,6 +13,8 @@ namespace GameEngine
 
         public string levelName;
         public List<GameObject> gameObjectsInScene = new List<GameObject>();
+
+        public float gravity = 98f;
         
 
         public Level(){
@@ -24,16 +26,13 @@ namespace GameEngine
         }
 
         public void LoadLevel(){
-            GameObject.gameObjects.Clear();
-
-            GameObject.gameObjects = gameObjectsInScene;
+            
             
         }
 
         public void SaveLevel(){
 
-            gameObjectsInScene = GameObject.gameObjects;
-            string fileName = levelName+ ".xml";
+            
             
 
         }
