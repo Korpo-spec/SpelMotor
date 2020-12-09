@@ -22,7 +22,7 @@ namespace GameEngine
 
             System.Console.WriteLine(GameObject.currentLevel);
             
-            new Player();
+            Player p = new Player();
             
             new Plattform(0, 600, 1500, 100);
             
@@ -30,7 +30,6 @@ namespace GameEngine
             Level.camera.target = new Vector2(0,0);
             Level.camera.offset = new Vector2(500, 400);
 
-            
 
             
             
@@ -51,7 +50,9 @@ namespace GameEngine
            
             testLevel.SaveLevel();
 
-            XmlSerializer levelSerializer = new XmlSerializer (typeof(Level));
+            Type[] extraTypes = {typeof(GameObject), typeof(Character), typeof(Player), typeof(Plattform)};
+
+            XmlSerializer levelSerializer = new XmlSerializer (typeof(Level), extraTypes);
             
             FileStream file = File.Open(@"testLevel.xml", FileMode.OpenOrCreate);
 

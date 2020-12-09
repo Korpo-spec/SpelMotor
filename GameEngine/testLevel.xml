@@ -1,4 +1,37 @@
 <?xml version="1.0"?>
 <Level xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <levelName>testLevel</levelName>
+  <gameObjectsInScene>
+    <GameObject xsi:type="Player">
+      <position>
+        <X>0</X>
+        <Y>550</Y>
+      </position>
+      <rotation>0</rotation>
+      <velocity>
+        <X>0</X>
+        <Y>0</Y>
+      </velocity>
+      <body>
+        <x>0</x>
+        <y>550</y>
+        <width>50</width>
+        <height>50</height>
+      </body>
+    </GameObject>
+    <GameObject xsi:type="Plattform">
+      <position>
+        <X>0</X>
+        <Y>0</Y>
+      </position>
+      <rotation>0</rotation>
+      <hitbox>
+        <x>0</x>
+        <y>600</y>
+        <width>1500</width>
+        <height>100</height>
+      </hitbox>
+    </GameObject>
+  </gameObjectsInScene>
+  <gravity>98</gravity>
 </Level>
