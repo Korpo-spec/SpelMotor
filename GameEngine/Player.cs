@@ -46,5 +46,30 @@ namespace GameEngine
             Raylib.DrawRectangleRec(body, Color.DARKBLUE);
             
         }
+
+        public void AddToInventory(Item item)
+        {
+
+        }
+
+        public void RemoveFromInventory(int n)
+        {
+
+        }
+
+        public void UseItem(int n)
+        {
+            
+        }
+
+        /*public string GetItemInfo(int n) 
+        {
+            return;
+        }*/
+
+        /*public int GetInventoryLength()
+        {
+            return;
+        }*/
     }
 }
