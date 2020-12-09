@@ -7,18 +7,19 @@ namespace GameEngine
 {
     public class GameObject
     {
-        protected Vector2 position = new Vector2(0, 0);
+        public Vector2 position = new Vector2(0, 0);
 
-        private float rotation = 0f;
+        public float rotation = 0f;
 
-        public static List<GameObject> gameObjects = new List<GameObject>();
+        public static Level currentLevel;
 
         public GameObject()
         {
-            gameObjects.Add(this);
+            currentLevel.gameObjectsInScene.Add(this);
             Console.WriteLine(this);
         }
 
+        
         public virtual void Update()
         {
 
@@ -31,7 +32,7 @@ namespace GameEngine
 
         public static void UpdateAll()
         {
-            foreach (GameObject u in gameObjects)
+            foreach (GameObject u in currentLevel.gameObjectsInScene)
             {
                 u.Update();
             }
@@ -43,7 +44,7 @@ namespace GameEngine
             Raylib.BeginMode2D(Level.camera);
             Raylib.ClearBackground(Color.WHITE);
             
-            foreach (GameObject d in gameObjects)
+            foreach (GameObject d in currentLevel.gameObjectsInScene)
             {
                 d.Draw();
             }
