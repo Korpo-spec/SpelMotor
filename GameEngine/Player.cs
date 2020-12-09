@@ -14,7 +14,7 @@ namespace GameEngine
         public override void Update()
         {
             float deltaTime = Raylib.GetFrameTime();
-            velocity.Y += gravity * 10 * deltaTime;
+            velocity.Y += currentLevel.gravity * 10 * deltaTime;
             if(Raylib.IsKeyDown(KeyboardKey.KEY_D))
             {
                 body.x += 4;
