@@ -14,7 +14,7 @@ namespace GameEngine
         
 
         public Rectangle body = new Rectangle(10, 10, 50, 50);
-        private int hp;
+        public int hp;
 
         public Character(){
 

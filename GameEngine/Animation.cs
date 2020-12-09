@@ -6,14 +6,15 @@ namespace GameEngine
 {
     public class Animation
     {
-        private Texture2D spriteSheet;
-        private Vector2 frame;
-        private Rectangle frameSize;
-        private int timing; 
+        int timer; 
 
-        void DrawAnimation(Texture2D spriteSheet, Rectangle frameSize, int timer, Vector2 position)
+        Texture2D spriteSheet = Raylib.LoadTexture(@"AnimTest.png");
+        Vector2 positionInTexture = new Vector2(0, 0);
+        Rectangle frameSize = new Rectangle(0, 0, 16, 12); 
+
+        /*void DrawAnimation(Texture2D spriteSheet, Rectangle frameSize, Vector2 positionInTexture)
         {
-            Raylib.DrawTextureEx (spriteSheet, position, 0, 0.5f, Color.BLANK);
-        }
+            Raylib.DrawTextureRec(spriteSheet, frameSize, positionInTexture, Color.BLANK);
+        }*/
     }
 }

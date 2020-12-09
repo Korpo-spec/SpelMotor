@@ -40,11 +40,6 @@ namespace GameEngine
 
         }
 
-        public void Pickup()
-        {
-
-        }
-
         public void Draw()
         {
 
