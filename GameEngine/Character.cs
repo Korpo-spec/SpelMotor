@@ -7,7 +7,7 @@ namespace GameEngine
 {
     public class Character : GameObject
     {
-        public static List<Plattform> Plattforms = new List<Plattform>();
+        public static List<Platform> Plattforms = new List<Platform>();
 
         public Vector2 velocity = new Vector2();
 
@@ -22,7 +22,7 @@ namespace GameEngine
 
         protected void CheckForCollision(){
 
-            foreach (Plattform item in Plattforms)
+            foreach (Platform item in Plattforms)
             {
                 if (Raylib.CheckCollisionRecs(item.hitbox, body))
                 {
