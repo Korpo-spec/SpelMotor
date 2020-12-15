@@ -36,8 +36,14 @@ namespace GameEngine
 
             while (!Raylib.WindowShouldClose())
             {
-                
-                
+                Texture2D spriteSheet = Raylib.LoadTexture(@"AnimTest.png");
+                Vector2 positionInTexture = new Vector2(0, 0);
+                Rectangle frameSize = new Rectangle(10, 10, 16, 12);
+                Animation test = new Animation();
+                Animation.DrawAnimation(spriteSheet, frameSize, positionInTexture); /*Doesn't crash, but also doesn't seem to work properly, 
+                                                                                      it finds and loads the png however it doesn't show up*/
+                                 
+
                 GameObject.UpdateAll();
                 
 
