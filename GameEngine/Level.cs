@@ -16,7 +16,7 @@ namespace GameEngine
 
         public float gravity = 98f;
 
-        static Type[] extraTypes = {typeof(GameObject), typeof(Character), typeof(Player), typeof(Plattform)};
+        static Type[] extraTypes = {typeof(GameObject), typeof(Character), typeof(Player), typeof(Platform)};
 
         static XmlSerializer levelSerializer = new XmlSerializer (typeof(Level), extraTypes);
 
