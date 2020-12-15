@@ -29,6 +29,9 @@ namespace GameEngine
             {
                 velocity.Y = -jumpForce;
             }
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_L)){
+                Level.LoadLevel("testLevel");
+            }
             
 
             body.x = position.X;
