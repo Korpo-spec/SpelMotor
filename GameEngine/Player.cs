@@ -11,6 +11,8 @@ namespace GameEngine
 
         private float jumpForce =200;
 
+        Animation anim = new Animation();
+
         public override void Update()
         {
             float deltaTime = Raylib.GetFrameTime();
@@ -41,12 +43,14 @@ namespace GameEngine
 
             position.Y = body.y;
             Level.camera.target = position + new Vector2(25, 25);
+            anim.positionInTexture = position;
         }
 
         public override void Draw()
         {
             
             Raylib.DrawRectangleRec(body, Color.DARKBLUE);
+            anim.DrawAnimation();
             
         }
 

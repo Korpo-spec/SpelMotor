@@ -31,23 +31,25 @@ namespace GameEngine
             Level.camera.offset = new Vector2(500, 400);
 
 
-            
+            Texture2D spriteSheet = Raylib.LoadTexture(@"AnimTest.png");
+            Animation test = new Animation();
             
 
             while (!Raylib.WindowShouldClose())
             {
-                Texture2D spriteSheet = Raylib.LoadTexture(@"AnimTest.png");
-                Vector2 positionInTexture = new Vector2(0, 0);
-                Rectangle frameSize = new Rectangle(10, 10, 16, 12);
-                Animation test = new Animation();
-                Animation.DrawAnimation(spriteSheet, frameSize, positionInTexture); /*Doesn't crash, but also doesn't seem to work properly, 
-                                                                                      it finds and loads the png however it doesn't show up*/
+                
+                //Vector2 positionInTexture = new Vector2(100, 200);
+                //Rectangle frameSize = new Rectangle(0, 0, 16, 12);
+                
+               
                                  
 
                 GameObject.UpdateAll();
                 
 
                 GameObject.DrawAll();
+                //Animation.DrawAnimation(spriteSheet, frameSize, positionInTexture); /*Doesn't crash, but also doesn't seem to work properly, 
+                                                                                      /*it finds and loads the png however it doesn't show up*/
 
                 if(Level.changeLevel){
                     Level.LoadNextLevel();
