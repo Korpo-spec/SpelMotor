@@ -22,15 +22,14 @@ namespace GameEngine
 
             System.Console.WriteLine(GameObject.currentLevel);
             
-            new Player();
+            Player p = new Player();
             
-            new Plattform(0, 600, 1500, 100);
+            new Plattform(0, 600, 1500, 200);
             
             Level.camera.zoom = 1f;
             Level.camera.target = new Vector2(0,0);
             Level.camera.offset = new Vector2(500, 400);
 
-            
 
             
             
@@ -50,22 +49,19 @@ namespace GameEngine
 
                 GameObject.DrawAll();
 
-                
+                if(Raylib.IsKeyDown(KeyboardKey.KEY_L))
+                {
+                    Level.LoadLevel("shh");
+                }
                 
                 
             }
            
-            testLevel.SaveLevel();
+            //testLevel.SaveLevel();
 
-            XmlSerializer levelSerializer = new XmlSerializer (typeof(Level));
             
-            FileStream file = File.Open(@"testLevel.xml", FileMode.OpenOrCreate);
 
-            levelSerializer.Serialize(file, testLevel);
-
-            file.Close();
-
-            Console.ReadLine();
+            
 
         }
     }

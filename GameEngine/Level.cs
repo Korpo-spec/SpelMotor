@@ -15,6 +15,12 @@ namespace GameEngine
         public List<GameObject> gameObjectsInScene = new List<GameObject>();
 
         public float gravity = 98f;
+
+        static Type[] extraTypes = {typeof(GameObject), typeof(Character), typeof(Player), typeof(Plattform)};
+
+        static XmlSerializer levelSerializer = new XmlSerializer (typeof(Level), extraTypes);
+
+        public static bool changeLevel = false;
         
 
         public Level(){
@@ -25,14 +31,27 @@ namespace GameEngine
             this.levelName = name;
         }
 
-        public void LoadLevel(){
+        public static void LoadLevel(string levelName2){
             
+            using (FileStream file = File.Open(@"testLevel.xml", FileMode.OpenOrCreate))
+            {
+                
+                GameObject.currentLevel = (Level) levelSerializer.Deserialize(file);
+            }
+
+            System.Console.WriteLine(GameObject.currentLevel.gameObjectsInScene.Count);
             
         }
 
         public void SaveLevel(){
 
+           
             
+            FileStream file = File.Open(@"testLevel2.xml", FileMode.OpenOrCreate);
+
+            levelSerializer.Serialize(file, this);
+
+            file.Close();
             
 
         }
