@@ -49,9 +49,8 @@ namespace GameEngine
 
                 GameObject.DrawAll();
 
-                if(Raylib.IsKeyDown(KeyboardKey.KEY_L))
-                {
-                    Level.LoadLevel("shh");
+                if(Level.changeLevel){
+                    Level.LoadNextLevel();
                 }
                 
                 

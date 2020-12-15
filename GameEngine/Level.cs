@@ -21,6 +21,9 @@ namespace GameEngine
         static XmlSerializer levelSerializer = new XmlSerializer (typeof(Level), extraTypes);
 
         public static bool changeLevel = false;
+        static string nextLevel;
+
+        
         
 
         public Level(){
@@ -31,16 +34,24 @@ namespace GameEngine
             this.levelName = name;
         }
 
-        public static void LoadLevel(string levelName2){
+        public static void LoadLevel(string changeLevelTo){
+
+            nextLevel = changeLevelTo;
+            changeLevel = true;
+
+        }
+        public static void LoadNextLevel(){
+
+            string levelToLoad = nextLevel + ".xml";
             
-            using (FileStream file = File.Open(@"testLevel.xml", FileMode.OpenOrCreate))
+            using (FileStream file = File.Open(levelToLoad, FileMode.OpenOrCreate))
             {
                 
                 GameObject.currentLevel = (Level) levelSerializer.Deserialize(file);
             }
 
             System.Console.WriteLine(GameObject.currentLevel.gameObjectsInScene.Count);
-            
+            changeLevel = false;
         }
 
         public void SaveLevel(){
