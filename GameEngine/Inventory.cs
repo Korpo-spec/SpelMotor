@@ -5,7 +5,7 @@ namespace GameEngine
     public class Inventory
     {
 
-        private Item[] itemsInventory;
+        //private Item[] itemsInventory;
 
 
         /*public void DontCrash 
