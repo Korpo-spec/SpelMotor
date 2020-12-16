@@ -9,9 +9,15 @@ namespace GameEngine
     {
         /*Weapon class goes here*/
 
-        private float jumpForce =200;
+        private float jumpForce = 200;
 
-        Animation anim = new Animation();
+        Animation anim; 
+
+        public Player()
+        {
+            string spriteSheetpng = "";
+            anim = new Animation(spriteSheetpng);
+        }
 
         public override void Update()
         {
@@ -43,7 +49,7 @@ namespace GameEngine
 
             position.Y = body.y;
             Level.camera.target = position + new Vector2(25, 25);
-            anim.positionInTexture = position;
+            anim.positionInWorld = position;
         }
 
         public override void Draw()
