@@ -10,7 +10,7 @@ namespace GameEngine
         /*Weapon class goes here*/
 
         private float jumpForce =200;
-
+        
         Animation anim = new Animation();
 
         public override void Update()
@@ -19,12 +19,12 @@ namespace GameEngine
             velocity.Y += currentLevel.gravity * 10 * deltaTime;
             if(Raylib.IsKeyDown(KeyboardKey.KEY_D))
             {
-                body.x += 4;
+                hitbox.x += 4;
                 position.X += 4;
             }
             if(Raylib.IsKeyDown(KeyboardKey.KEY_A))
             {
-                body.x -= 4;
+                hitbox.x -= 4;
                 position.X -= 4;
             }
             if(Raylib.IsKeyDown(KeyboardKey.KEY_SPACE))
@@ -36,12 +36,12 @@ namespace GameEngine
             }
             
 
-            body.x = position.X;
-            body.y += velocity.Y * deltaTime;
+            hitbox.x = position.X;
+            hitbox.y += velocity.Y * deltaTime;
             
             CheckForCollision();
 
-            position.Y = body.y;
+            position.Y = hitbox.y;
             Level.camera.target = position + new Vector2(25, 25);
             anim.positionInTexture = position;
         }
@@ -49,7 +49,7 @@ namespace GameEngine
         public override void Draw()
         {
             
-            Raylib.DrawRectangleRec(body, Color.DARKBLUE);
+            Raylib.DrawRectangleRec(hitbox, Color.DARKBLUE);
             anim.DrawAnimation();
             
         }
