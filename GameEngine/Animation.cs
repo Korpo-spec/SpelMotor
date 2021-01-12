@@ -21,7 +21,7 @@ namespace GameEngine
             frameSize.height = frameSize.height*scale; //These scales the framesize using the scaling reference to sclae it together with the Image
             frameSize.width = frameSize.width*scale;
 
-            spriteSheet = Raylib.LoadTextureFromImage(sourceImg); //creates a drawable texture from the previously set spritesheet Image.
+            spriteSheet = Raylib.LoadTextureFromImage(sourceImg); //Creates a drawable texture from the previously set spritesheet Image.
         }
         public void DrawAnimation() //Method that draws the rec
         {
