@@ -17,7 +17,7 @@ namespace GameEngine
         public int hp;
 
         public Character(){
-
+            
         }
 
         protected void CheckForCollision(){
