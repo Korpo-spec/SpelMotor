@@ -13,7 +13,7 @@ namespace GameEngine
             hitbox.width = width;
             hitbox.height = height;
 
-            Character.Plattforms.Add(this);
+            Character.Platforms.Add(this);
         }
 
         public Platform(){

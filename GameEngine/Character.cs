@@ -7,7 +7,7 @@ namespace GameEngine
 {
     public class Character : Collider
     {
-        public static List<Platform> Plattforms = new List<Platform>();//list of all the platforms
+        public static List<Platform> Platforms = new List<Platform>();//list of all the platforms
 
         
 

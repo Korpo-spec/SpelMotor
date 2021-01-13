@@ -12,7 +12,9 @@ namespace GameEngine
         public Rectangle frameSize = new Rectangle(0, 0, 16, 12); //The size of the part of the spritesheet that will be drawn.
 
         public int scale= 4; //The scale reference number
-
+        public Animation(){
+            
+        }
         public Animation(string spriteSheetpng) //The constructor that takes in a string variable of the spritesheet that will be used
         {
             Image sourceImg = Raylib.LoadImage(spriteSheetpng); //Uses the spritesheet string variable to create an Image.

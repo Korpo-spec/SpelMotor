@@ -7,7 +7,7 @@ namespace GameEngine
 {
     public class Player : Character
     {
-        /*Weapon class goes here 
+        /*Weapon class goes here */
 
         private float jumpForce = 200; //A variable for how high the player can jump
 
@@ -60,7 +60,7 @@ namespace GameEngine
             position.Y = hitbox.y;
             Level.camera.target = position + new Vector2(25, 25);
 
-            anim.positionInTexture = position;
+            anim.positionInWorld = position;
             Console.WriteLine(position);
 
         }
