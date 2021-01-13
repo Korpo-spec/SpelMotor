@@ -10,13 +10,14 @@ namespace GameEngine
         /*Weapon class goes here */
 
         private float jumpForce = 200; //A variable for how high the player can jump
-
+        
         Animation anim; //A variable for storing the spritesheet for the player
 
         public Player() //Uses the above variable to turn the spritesheet png to the anim variable
         {
             string spriteSheetpng = "";
             anim = new Animation(spriteSheetpng);
+            hitbox = new Rectangle(0,200 , 50 , 50);
         }
 
         public override void Update() //Overrides the Update method in gameobjects and fills it with controls and in world checks for the position, speed and collision of the player
