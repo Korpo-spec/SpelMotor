@@ -5,7 +5,7 @@ namespace GameEngine
 {
     public class Consumable : Item
     {
-        private int maxQuantity;
+        //private int maxQuantity;
 
         
     }

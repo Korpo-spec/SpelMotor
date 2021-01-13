@@ -7,17 +7,20 @@ namespace GameEngine
 {
     public class Player : Character
     {
-        /*Weapon class goes here*/
+        /*Weapon class goes here 
 
-        private float jumpForce =200;
-        
-        
-        Animation anim = new Animation();
+        private float jumpForce = 200; //A variable for how high the player can jump
 
-        public Player(){
-            hitbox = new Rectangle(position.X,position.Y,50,50);
+        Animation anim; //A variable for storing the spritesheet for the player
+
+        public Player() //Uses the above variable to turn the spritesheet png to the anim variable
+        {
+            string spriteSheetpng = "";
+            anim = new Animation(spriteSheetpng);
         }
-        public override void Update()
+
+        public override void Update() //Overrides the Update method in gameobjects and fills it with controls and in world checks for the position, speed and collision of the player
+
         {
             float deltaTime = Raylib.GetFrameTime();
             velocity.Y += currentLevel.gravity * 10 * deltaTime;
@@ -56,11 +59,13 @@ namespace GameEngine
 
             position.Y = hitbox.y;
             Level.camera.target = position + new Vector2(25, 25);
+
             anim.positionInTexture = position;
             Console.WriteLine(position);
+
         }
 
-        public override void Draw()
+        public override void Draw() //Overrides the GameObject draw method to draw the character into the scene
         {
             
             Raylib.DrawRectangleRec(hitbox, Color.DARKBLUE);
@@ -68,7 +73,7 @@ namespace GameEngine
             
         }
 
-        public void AddToInventory(Item item)
+        public void AddToInventory(Item item) //Empty methods to add and remove items from the inventory, and to use items
         {
 
         }
