@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace GameEngine
 {
-    public class Collider : GameObject
+    public abstract class Collider : GameObject
     {
         public Vector2 velocity = new Vector2();//Velocity, used for gravity
 
-        public Rectangle hitbox = new Rectangle(10, 10, 50, 50);//basically the hitbox
+        public Rectangle hitbox;
 
         public static List<Collider> colliderObjects = new List<Collider>();
 
@@ -19,17 +19,47 @@ namespace GameEngine
         }
         protected void CheckForCollision(){
 
-            foreach (Collider item in colliderObjects)
-            {
-                if (Raylib.CheckCollisionRecs(item.hitbox, hitbox))//Checks if a character is colliding with plattforms and makes then not fall through it also calls for OnCollision()
-                {
-                    Rectangle colliding = Raylib.GetCollisionRec(item.hitbox,hitbox);
+            
 
-                    hitbox.y -= colliding.height;
+            foreach (Collider item in colliderObjects)
+            {   
+                if(item != this){
                     
-                    velocity.Y = 0;
-                    OnCollision(item);
+                    if (Raylib.CheckCollisionRecs(item.hitbox, hitbox))//Checks if a character is colliding with plattforms and makes then not fall through it also calls for OnCollision()
+                    {
+                        
+                        Rectangle colliding = Raylib.GetCollisionRec(item.hitbox,hitbox);
+                          
+                        if(colliding.width <= colliding.height)
+                        {
+                            if(colliding.x > hitbox.x + (hitbox.width/2)){
+                                hitbox.x -= colliding.width;
+                                position.X -= colliding.width;
+                            }
+                            else{
+                                hitbox.x += colliding.width;
+                                position.X += colliding.width;
+                            }
+                        }
+
+                        if(colliding.height <= colliding.width)//Checks if the box between the
+                        {
+                            /*
+                            if(colliding.y > hitbox.y + (hitbox.height/2)){
+                                hitbox.y += colliding.height;
+                            }
+                            else{
+                                
+                            }
+                            */
+                            hitbox.y -= colliding.height;
+                            velocity.Y = 0;
+                        }
+
+                        OnCollision(item);
+                    }
                 }
+                
             }
 
         }

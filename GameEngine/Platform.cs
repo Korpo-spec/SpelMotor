@@ -3,9 +3,9 @@ using Raylib_cs;
 
 namespace GameEngine
 {
-    public class Platform : GameObject
+    public class Platform : Collider
     {
-        public Rectangle hitbox = new Rectangle();
+        //public Rectangle hitbox = new Rectangle();
 
         public Platform(int x, int y, int width, int height){
             hitbox.x = x;

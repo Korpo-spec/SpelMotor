@@ -25,6 +25,7 @@ namespace GameEngine
             Player p = new Player();
             
             new Platform(0, 600, 1500, 200);
+            new Platform(300, 400, 500,100);
             
             Level.camera.zoom = 1f;
             Level.camera.target = new Vector2(0,0);
@@ -33,6 +34,8 @@ namespace GameEngine
 
             Texture2D spriteSheet = Raylib.LoadTexture(@"AnimTest.png");
             Animation test = new Animation();
+
+            
             
 
             while (!Raylib.WindowShouldClose())
