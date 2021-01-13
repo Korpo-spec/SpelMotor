@@ -24,28 +24,33 @@ namespace GameEngine
             
             Player p = new Player();
             
-            new Plattform(0, 600, 1500, 200);
+            new Platform(0, 600, 1500, 200);
+            new Platform(300, 400, 500,100);
             
             Level.camera.zoom = 1f;
             Level.camera.target = new Vector2(0,0);
             Level.camera.offset = new Vector2(500, 400);
 
 
+
+            Texture2D spriteSheet = Raylib.LoadTexture(@"AnimTest.png");
+            Animation test = new Animation();
+
             
+
             
 
             while (!Raylib.WindowShouldClose())
-            {
-                
+            {                     
                 
                 GameObject.UpdateAll();
                 
 
                 GameObject.DrawAll();
+                
 
-                if(Raylib.IsKeyDown(KeyboardKey.KEY_L))
-                {
-                    Level.LoadLevel("shh");
+                if(Level.changeLevel){
+                    Level.LoadNextLevel();
                 }
                 
                 

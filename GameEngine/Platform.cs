@@ -3,11 +3,11 @@ using Raylib_cs;
 
 namespace GameEngine
 {
-    public class Plattform : GameObject
+    public class Platform : Collider
     {
-        public Rectangle hitbox = new Rectangle();
+        //public Rectangle hitbox = new Rectangle();
 
-        public Plattform(int x, int y, int width, int height){
+        public Platform(int x, int y, int width, int height){
             hitbox.x = x;
             hitbox.y = y;
             hitbox.width = width;
@@ -16,7 +16,7 @@ namespace GameEngine
             Character.Plattforms.Add(this);
         }
 
-        public Plattform(){
+        public Platform(){
 
         }
         public override void Draw(){
