@@ -16,7 +16,7 @@ namespace GameEngine
 
         public float gravity = 98f;// the gravity of the current Level
 
-        static Type[] extraTypes = {typeof(GameObject), typeof(Character), typeof(Player), typeof(Platform), typeof(Animation)};//all sorts of object that might appear as a subclass or in a subclass in gameobjectsInScene
+        static Type[] extraTypes = {typeof(GameObject), typeof(Character), typeof(Player), typeof(Platform), typeof(Animation), typeof(Collider)};//all sorts of object that might appear as a subclass or in a subclass in gameobjectsInScene
 
         static XmlSerializer levelSerializer = new XmlSerializer (typeof(Level), extraTypes);//Serialiser for level and its subclasses
         public static bool changeLevel = false;//if true will change level in the end of next frame
