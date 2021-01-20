@@ -13,34 +13,25 @@ namespace GameEngine
     {
         static void Main(string[] args)
         {
-            Raylib.InitWindow(1000, 800, "Spelmotor demo");
+            Raylib.InitWindow(1000, 800, "Spelmotor demo"); //Sets the size and framerate of the game window
             Raylib.SetTargetFPS(60);
 
-            Level testLevel = new Level("testLevel");
+            Level testLevel = new Level("testLevel"); //Creates a level where the gameobjects can be drawn
 
-            GameObject.currentLevel = testLevel;
+            GameObject.currentLevel = testLevel; //Sets GameObjects level variable to match the current level
 
-            System.Console.WriteLine(GameObject.currentLevel);
+            System.Console.WriteLine(GameObject.currentLevel); //Writes out the current level in the console
             
-            Player p = new Player();
+            Player p = new Player(); //Creates a new level
             
-            new Platform(0, 600, 1500, 200);
+            new Platform(0, 600, 1500, 200); //Creates two platforms of different sizes
             new Platform(300, 400, 500,100);
             
-            Level.camera.zoom = 1f;
-            Level.camera.target = new Vector2(0,0);
-            Level.camera.offset = new Vector2(500, 400);
+            Level.camera.zoom = 1f; //A zoom variable for the camera to work
+            Level.camera.target = new Vector2(0,0); // Where the camera is pointed at
+            Level.camera.offset = new Vector2(500, 400); //Makes sure tha camer is in the middle of the screen
 
-
-
-            Texture2D spriteSheet = Raylib.LoadTexture(@"AnimTest.png");
-            Animation test = new Animation();
-
-            
-
-            
-
-            while (!Raylib.WindowShouldClose())
+            while (!Raylib.WindowShouldClose()) //The game loop that updates and draws all gamobjects in the current scene
             {                     
                 
                 GameObject.UpdateAll();
@@ -49,7 +40,8 @@ namespace GameEngine
                 GameObject.DrawAll();
                 
 
-                if(Level.changeLevel){
+                if(Level.changeLevel) //Functionality to change level manually inside of the program
+                {   
                     Level.LoadNextLevel();
                 }
                 

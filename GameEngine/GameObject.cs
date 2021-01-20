@@ -13,7 +13,7 @@ namespace GameEngine
 
         public static Level currentLevel; //A refernce to which level is currently displayed
 
-        public GameObject() //This constructor adds in the current game object in focus to the scene
+        public GameObject() //This constructor adds in the current game object in question to the scene
         {
             currentLevel.gameObjectsInScene.Add(this);
             Console.WriteLine(this);
