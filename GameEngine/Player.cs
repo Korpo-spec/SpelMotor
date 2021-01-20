@@ -23,11 +23,11 @@ namespace GameEngine
         public override void Update() //Overrides the Update method in gameobjects and fills it with controls and in world checks for the position, speed and collision of the player
 
         {
-            float deltaTime = Raylib.GetFrameTime();
-            velocity.Y += currentLevel.gravity * 10 * deltaTime;
+            float deltaTime = Raylib.GetFrameTime();// en delta time funktion
+            velocity.Y += currentLevel.gravity * 10 * deltaTime;//sets velocity Y so that it simulates gravity
             
             
-            if(Raylib.IsKeyDown(KeyboardKey.KEY_D))
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_D))// checks what button is pressed and changes position of the player according to that
             {
                 hitbox.x += 4;
                 position.X += 4;
@@ -37,31 +37,26 @@ namespace GameEngine
                 hitbox.x -= 4;
                 position.X -= 4;
             }
-            if(Raylib.IsKeyDown(KeyboardKey.KEY_SPACE))
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_SPACE))// if space is pressed make the character jump by setting the velocity.Y to negative
             {
                 velocity.Y = -jumpForce;
             }
-            if(Raylib.IsKeyDown(KeyboardKey.KEY_L)){
+            if(Raylib.IsKeyDown(KeyboardKey.KEY_L)){//a test run to simulate level changes
                 Level.LoadLevel("testLevel");
             }
 
-            if(Raylib.IsKeyDown(KeyboardKey.KEY_E)){
-                hitbox.x = 300;
-                position.X = 300;
-                hitbox.y = 600;
-                position.Y = 600;
-            }
+            
             
 
-            hitbox.x = position.X;
-            hitbox.y += velocity.Y * deltaTime;
+            hitbox.x = position.X; //syncs the position and hitbox position
+            hitbox.y += velocity.Y * deltaTime; // implements gravity
             
-            CheckForCollision();
+            CheckForCollision();//runs the script for checking collision
 
-            position.Y = hitbox.y;
-            Level.camera.target = position + new Vector2(25, 25);
+            position.Y = hitbox.y; //syncs the position and hitbox.Y
+            Level.camera.target = position + new Vector2(25, 25);// makes the camera follow you
 
-            anim.positionInWorld = position;
+            anim.positionInWorld = position;// tests for the animation
             Console.WriteLine(position);
 
         }
@@ -69,7 +64,7 @@ namespace GameEngine
         public override void Draw() //Overrides the GameObject draw method to draw the character into the scene
         {
             
-            Raylib.DrawRectangleRec(hitbox, Color.DARKBLUE);
+            Raylib.DrawRectangleRec(hitbox, Color.DARKBLUE);//draws the character
             //anim.DrawAnimation();
             
         }
